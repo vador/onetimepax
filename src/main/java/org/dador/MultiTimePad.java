@@ -56,7 +56,7 @@ public class MultiTimePad {
             i++;
         }
         // Fill in the key ...
-        key[0] = 0 ;
+        key[0] =(byte) 0x9A ;
         key[1] = 0x50;
         key[2] = (byte)0xCC;
         key[3] = (byte)0xF2;
