@@ -45,10 +45,44 @@ public class MultiTimePad {
         key = new byte[msg1.length() / 2];
         // Fill in the key ...
         key[0] = 0 ;
+        key[1] = (byte) 0x50;
+        key[2] = (byte) 0xcc;
+        key[3] = (byte) 0xbf;
+        key[4] = (byte) 0xff;
+        key[5] = (byte) 0xfc;
+        //key[6];
+        key[7] = (byte) 0xfb;
+        //key[8];
+        key[9] = (byte) 0xab;
+        //key[10];
+        key[11] = (byte) 0x61;
+        key[12] = (byte) 0xe0;
+        key[13] = (byte) 0x9b;
+        key[14] = (byte) 0x9f;
+        key[15] = (byte) 0x51;
+        key[16] = (byte) 0x2d;
+        //key[17];
+        key[18] = (byte) 0xb0;
+        //key[19] = (byte) 0xab;
         System.out.println("Key :");
         System.out.println(displayIndex);
         System.out.println(HexConverters.toPrintableHexFromByteArray(key));
+        
+        System.out.println();
+        System.out.println();
+        System.out.println();
+        
+        byte[] tmpByteMsgs;
+        for (i = 1; i < messages.length; i++) {
+        	tmpByteMsgs = HexConverters.xorArray(byteArrayMsg[0], byteArrayMsg[i]);
+            System.out.println(HexConverters.toPrintableHexFromByteArray(tmpByteMsgs));
+        }
+        
+        //String displayIndex HexConverters.toByteArrayFromHex("1F");
 
+       
+        
+        
         // Affichage des messages décodés
         System.out.println();
         System.out.println("Decoded messages :");
