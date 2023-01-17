@@ -28,7 +28,7 @@ public class MultiTimePad {
         byte[] tmpByteMsg;
         int i;
 
-
+            
         String displayIndex = HexConverters.toPrintableHexFromByteArray(HexConverters.toByteArrayFromHex(index));
         System.out.println("Original Cryptograms :");
         System.out.println(displayIndex);
@@ -43,8 +43,24 @@ public class MultiTimePad {
         System.out.println();
 
         key = new byte[msg1.length() / 2];
+        byte[] message0 = new byte[msg1.length() / 2];
+        message0=HexConverters.toByteArrayFromHex(messages[0]);
+        System.out.println("XOR messages :");
+        i = 0;
+        while (i < nbMsg) {
+            tmpByteMsg = HexConverters.xorArray(message0, byteArrayMsg[i]);
+          //  System.out.println(HexConverters.toPrintableString(tmpByteMsg));
+            System.out.println(HexConverters.toPrintableHexFromByteArray(tmpByteMsg));
+            i++;
+        }
         // Fill in the key ...
         key[0] = 0 ;
+        key[1] = 0x50;
+        key[2] = (byte)0xCC;
+        key[3] = (byte)0xF2;
+        key[4] = (byte)0xFF;
+        key[9] = (byte)0xAB;
+       
         System.out.println("Key :");
         System.out.println(displayIndex);
         System.out.println(HexConverters.toPrintableHexFromByteArray(key));
@@ -55,7 +71,7 @@ public class MultiTimePad {
         i = 0;
         while (i < nbMsg) {
             tmpByteMsg = HexConverters.xorArray(key, byteArrayMsg[i]);
-            System.out.println(HexConverters.toPrintableString(tmpByteMsg));
+           System.out.println(HexConverters.toPrintableString(tmpByteMsg));
             i++;
         }
     }
