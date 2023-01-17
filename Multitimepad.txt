@@ -1,0 +1,13 @@
+Plusieurs messages ont été encodés sur le principe du masque jetable, mais en utilisant la même clé plusieurs fois.
+
+Merci de décrypter les messages suivants:
+
+ce38a99f9c89fc89e8c5c14190f7fe3f0de5c388e3670420c57db02e66ee51
+d43fb89f9092ebdbeecad10494bbf6220deed5dce36d0620c270b23223d351
+d370add2df8ce29ae3c5dc0f87bbfe715ee9d3daf27c546ddf6ba0356cf451
+d235ecd68cdcfa93e88bda0f8ce2bf2148fec3c7f928006f966ca12970ee51
+cd38a9d1df8fe694f8c7d14197febf3c48e9c488e3675464d938a7346ae940
+d370b8d79692e5dbf9c3d018c0e8f73e58e0d488f167186cd96ff3346af751
+ce38a5ccdf95fddbfddec70492bbeb394ce290dcff690020d976b67c6ae951
+
+Ils sont en anglais, et n'utilisent pas de caractères spéciaux.
