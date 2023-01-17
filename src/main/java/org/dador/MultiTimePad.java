@@ -1,3 +1,5 @@
+
+//Binome  Salif Fofana et Lydia Benrabia 
 package org.dador;
 
 /**
@@ -59,6 +61,7 @@ public class MultiTimePad {
         key[2] = (byte)0xCC;
         key[3] = (byte)0xF2;
         key[4] = (byte)0xFF;
+        key[5] = (byte)0xFC;
         key[9] = (byte)0xAB;
        
         System.out.println("Key :");
