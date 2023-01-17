@@ -43,12 +43,41 @@ public class MultiTimePad {
         System.out.println();
 
         key = new byte[msg1.length() / 2];
+        byte[] message0= new byte [msg1.length()/2];
+        message0= HexConverters.toByteArrayFromHex(messages[0]);
         // Fill in the key ...
-        key[0] = 0 ;
+        key[0] = (byte) 0x9a;
+        key[1]= (byte) 0x50;
+        key[2]= (byte) (0xec ^ 0x20) ;
+        key[3]= (byte) (0x9f ^ 0x20) ;
+        key[4]= (byte) (0xff) ;
+        key[5]= (byte) (0xfc) ;
+        key[7]= (byte) (0xfb) ;
+        key[9]= (byte) (0xab);
+        key[11]= (byte) (0x61) ;
+        key[12]= (byte) (0xc0) ;
+        key[13]= (byte) (0x9b) ;
+        key[14]= (byte) (0x9f);
+        key[15]= (byte) (0x51) ;
+        key[16]= (byte) (0x2d) ;
+       
+        
+        
         System.out.println("Key :");
         System.out.println(displayIndex);
         System.out.println(HexConverters.toPrintableHexFromByteArray(key));
+        // Affichage des messages xor
 
+        // Affichage des messages xor
+        System.out.println();
+        System.out.println("xor messages :");
+        i = 0;
+        while (i < nbMsg) {
+            tmpByteMsg = HexConverters.xorArray(message0, byteArrayMsg[i]);
+           // System.out.println(HexConverters.toPrintableString(tmpByteMsg));
+            System.out.println(HexConverters.toPrintableHexFromByteArray(tmpByteMsg));
+            i++;
+        }
         // Affichage des messages décodés
         System.out.println();
         System.out.println("Decoded messages :");
