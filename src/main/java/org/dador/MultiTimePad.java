@@ -51,7 +51,18 @@ public class MultiTimePad {
         key[2]= (byte) (0xec ^ 0x20) ;
         key[3]= (byte) (0x9f ^ 0x20) ;
         key[4]= (byte) (0xff) ;
+        key[5]= (byte) (0xfc) ;
+        key[7]= (byte) (0xfb) ;
+        key[9]= (byte) (0xab);
+        key[11]= (byte) (0x61) ;
+        key[12]= (byte) (0xc0) ;
+        key[13]= (byte) (0x9b) ;
+        key[14]= (byte) (0x9f);
+        key[15]= (byte) (0x51) ;
+        key[16]= (byte) (0x2d) ;
        
+        
+        
         System.out.println("Key :");
         System.out.println(displayIndex);
         System.out.println(HexConverters.toPrintableHexFromByteArray(key));
