@@ -31,31 +31,55 @@ public class MultiTimePad {
 
         String displayIndex = HexConverters.toPrintableHexFromByteArray(HexConverters.toByteArrayFromHex(index));
         System.out.println("Original Cryptograms :");
+        System.out.print("i: ");
         System.out.println(displayIndex);
 
         // Transforme les messages sous un format "tableau d'octets" pour pouvoir les manipuler
         for (i = 0; i < nbMsg; i++) {
             tmpByteMsg = HexConverters.toByteArrayFromHex(messages[i]);
             byteArrayMsg[i] = tmpByteMsg;
+            System.out.print(i);
+            System.out.print(": ");
             System.out.println(HexConverters.toPrintableHexFromByteArray(byteArrayMsg[i]));
         }
 
         System.out.println();
 
         key = new byte[msg1.length() / 2];
-        // Fill in the key ...
+        // TODO: renseigner les valeurs de la clé..
         key[0] = 0 ;
+        key[1] = 0x50;
+
+
         System.out.println("Key :");
         System.out.println(displayIndex);
         System.out.println(HexConverters.toPrintableHexFromByteArray(key));
+
+        // Affichage des XOR :
+        System.out.println();
+        System.out.println("XOR messages :");
+        System.out.print("i: ");
+        System.out.println(displayIndex);
+        i = 1;
+        while (i < nbMsg) {
+            // TODO : modifier la ligne suivante
+            tmpByteMsg = HexConverters.toByteArrayFromHex(messages[i]);
+            System.out.print(i);
+            System.out.print(": ");
+            System.out.println( HexConverters.toPrintableHexFromByteArray(tmpByteMsg));
+            i++;
+        }
 
         // Affichage des messages décodés
         System.out.println();
         System.out.println("Decoded messages :");
         i = 0;
         while (i < nbMsg) {
+            // TODO : afficher le message, au lieu des valeur par octet
             tmpByteMsg = HexConverters.xorArray(key, byteArrayMsg[i]);
-            System.out.println(HexConverters.toPrintableString(tmpByteMsg));
+            System.out.print(i);
+            System.out.print(": ");
+            System.out.println(HexConverters.toPrintableHexFromByteArray(tmpByteMsg));
             i++;
         }
     }
