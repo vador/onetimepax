@@ -50,6 +50,29 @@ public class MultiTimePad {
         // TODO: renseigner les valeurs de la clé..
         key[0] = 0 ;
         key[1] = 0x50;
+        key[2] = (byte)0xcc;
+        key[3] = (byte)(0x20 ^ 0xd6);
+        key[4] = (byte)(0x20 ^0xdf);
+        key[9] = (byte)(0x20 ^0x8b);
+        key[11] = (byte)(0x20 ^0x04);
+        key[13] = (byte)(0x20 ^0xbb);
+        key[14] = (byte)(0x20 ^0xbf);
+        key[15] = (byte)(0x20 ^0x71);
+        key[16] = (byte)(0x20 ^0x48);
+        key[19] = (byte)(0x20 ^0xc7);
+        key[21] = (byte)(0x20 ^0x28);
+        key[23] = (byte)(0x20 ^0x6d);
+        key[25] = (byte)(0x20 ^0x38);
+        key[26] = (byte)(0x20 ^0xf3);
+        key[28] = (byte)(0x20 ^0x23);
+
+
+
+
+
+
+
+
 
 
         System.out.println("Key :");
@@ -63,8 +86,7 @@ public class MultiTimePad {
         System.out.println(displayIndex);
         i = 1;
         while (i < nbMsg) {
-            // TODO : modifier la ligne suivante
-            tmpByteMsg = HexConverters.toByteArrayFromHex(messages[i]);
+            tmpByteMsg = HexConverters.xorArray(byteArrayMsg[0], byteArrayMsg[i]);
             System.out.print(i);
             System.out.print(": ");
             System.out.println( HexConverters.toPrintableHexFromByteArray(tmpByteMsg));
@@ -80,7 +102,7 @@ public class MultiTimePad {
             tmpByteMsg = HexConverters.xorArray(key, byteArrayMsg[i]);
             System.out.print(i);
             System.out.print(": ");
-            System.out.println(HexConverters.toPrintableHexFromByteArray(tmpByteMsg));
+            System.out.println(HexConverters.toPrintableString(tmpByteMsg));
             i++;
         }
     }
