@@ -1,5 +1,5 @@
 package org.dador;
-
+/*BINOME : IHDENE LYSA ET FIRDAOUSS GHARRAS*/
 /**
  *
  */
@@ -96,16 +96,9 @@ public class MultiTimePad {
         	tmpByteMsg = HexConverters.toByteArrayFromHex(messages[i]);
         	byteArrayXor[i]=HexConverters.xorArray(tmpByteMsg,HexConverters.toByteArrayFromHex(messages[0]));
         	tmpByteMsg=byteArrayXor[i];
-			
-			 // byte[] currentMsgBytes = HexConverters.toByteArrayFromHex(messages[i]);
-			  //byte[] firstMsgBytes = HexConverters.toByteArrayFromHex(messages[0]);
-			  
-			 // tmpByteMsg = HexConverters.xorArray(currentMsgBytes, firstMsgBytes);
-			 
         	System.out.print(i);
         	System.out.print(": ");
         	System.out.println( HexConverters.toPrintableHexFromByteArray(tmpByteMsg));
-        	//System.out.println(HexConverters.toPrintableString(tmpByteMsg));
         	i++;
         }
         
@@ -115,7 +108,6 @@ public class MultiTimePad {
         i = 0;
         while (i < nbMsg) {
             // TODO : afficher le message, au lieu des valeur par octet
-        	// TODO : afficher le message, au lieu des valeur par octet
             tmpByteMsg = HexConverters.xorArray(key, byteArrayMsg[i]);
             System.out.print(i);
             System.out.print(": ");
