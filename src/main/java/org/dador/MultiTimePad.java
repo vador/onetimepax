@@ -50,7 +50,6 @@ public class MultiTimePad {
         key[0] = 0 ;
         key[1] = 0x50;
 
-
         System.out.println("Key :");
         System.out.println(displayIndex);
         System.out.println(HexConverters.toPrintableHexFromByteArray(key));
