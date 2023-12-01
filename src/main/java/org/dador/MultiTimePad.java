@@ -1,7 +1,9 @@
 package org.dador;
 
+import java.nio.charset.StandardCharsets;
+
 /**
- *
+ *Rayan BEN MARZOUK / Mamadou CAMARA / T3 / 2023-2024
  */
 public class MultiTimePad {
 
@@ -47,8 +49,38 @@ public class MultiTimePad {
 
         key = new byte[msg1.length() / 2];
         // TODO: renseigner les valeurs de la clé..
-        key[0] = 0 ;
+        key[0] = (byte)(0x54 ^ 0xce) ;
         key[1] = 0x50;
+        key[2] = (byte) (0xec ^ 0x20);
+        key[3] = (byte) (0x9f ^ 0x20);
+        key[4] = (byte) (0xdf ^ 0x20);
+        key[5] = (byte) (0x75 ^ 0x89);
+        key[6] = (byte) (0x72 ^ 0xfc);
+        key[7] = (byte) (0x72 ^ 0x89);
+        key[8] = (byte) (0x65 ^ 0xe8);
+        key[9] = (byte) (0x6e ^ 0xc5);
+        key[10] = (byte) (0x74 ^ 0xc1);
+        key[11] = (byte) (0x41 ^ 0x20);
+        key[12] = (byte) (0x67 ^ 0x87);
+        key[13] = (byte) (0xbb ^ 0x20);
+        key[14] = (byte) (0xbf ^ 0x20);
+        key[15] = (byte) (0x71 ^ 0x20);
+        key[16] = (byte) (0x75 ^ 0x58);
+        key[17] = (byte) (0x6c ^ 0xe0);
+        key[18] = (byte) (0x64 ^ 0xd4);
+        key[19] = (byte) (0x88 ^ 0x20);
+        key[20] = (byte) (0x74 ^ 0xe3);
+        key[21] = (byte) (0x28 ^ 0x20);
+        key[22] = (byte) (0x72 ^ 0x06);
+        key[23] = (byte) (0x6f ^ 0x6f);
+        key[24] = (byte) (0x6f ^ 0xd9 );
+        key[25] = (byte) (0x38 ^ 0x20);
+        key[26] = (byte) (0xf3 ^ 0x20);
+        key[27] = (byte) (0x69 ^ 0x35);
+        key[28] = (byte) (0x23 ^ 0x20);
+        key[29] = (byte) (0x6E ^ 0xf4);
+        key[30] = (byte) (0x2E ^ 0x51);
+
 
 
         System.out.println("Key :");
@@ -61,9 +93,10 @@ public class MultiTimePad {
         System.out.print("i: ");
         System.out.println(displayIndex);
         i = 1;
+        System.out.println("Modification 1 :");
         while (i < nbMsg) {
             // TODO : modifier la ligne suivante
-            tmpByteMsg = HexConverters.toByteArrayFromHex(messages[i]);
+            tmpByteMsg = HexConverters.xorArray(byteArrayMsg[0], byteArrayMsg[i]);
             System.out.print(i);
             System.out.print(": ");
             System.out.println( HexConverters.toPrintableHexFromByteArray(tmpByteMsg));
@@ -75,11 +108,12 @@ public class MultiTimePad {
         System.out.println("Decoded messages :");
         i = 0;
         while (i < nbMsg) {
+
             // TODO : afficher le message, au lieu des valeur par octet
             tmpByteMsg = HexConverters.xorArray(key, byteArrayMsg[i]);
             System.out.print(i);
             System.out.print(": ");
-            System.out.println(HexConverters.toPrintableHexFromByteArray(tmpByteMsg));
+            System.out.println(HexConverters.toPrintableString(tmpByteMsg));
             i++;
         }
     }
