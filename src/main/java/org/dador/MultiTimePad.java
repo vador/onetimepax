@@ -50,10 +50,45 @@ public class MultiTimePad {
 
         key = new byte[msg1.length() / 2];
         // TODO: renseigner les valeurs de la clé..
-        key[0] = 0 ;
+        key[0] =  (byte)( 0xce^0x54); ;
         key[1] = 0x50;
-        key[2] = (byte) 0xec^0x20;
-      //  key[3] = (byte) 0x9f^0x20;
+        key[2] = (byte)( 0xec^0x20);
+        key[3] = (byte) (0x9f^0x20);
+        key[4] = (byte) (0xdf^0x20);
+        key[5] = (byte) (0xdc^0x20);
+        key[6] = (byte) (0xeb^0x65);
+        key[7] = (byte) (0xdb^0x20);
+        key[8] = (byte) (0xe8^0x65);
+        key[9] = (byte) (0x8b^0x20);
+       key[10] = (byte) (0xc1^0x74);
+        key[11] = (byte) (0x41^0x20);
+        key[12] = (byte) (0xc0^0x20);
+        key[13] = (byte) (0xbb^0x20);
+        key[14] = (byte) (0xbf^0x20);
+        key[15] = (byte) (0x71^0x20);
+     
+
+        ////
+        key[16]=(byte) (0x0d ^ 0x20);
+        key[17]=(byte) (0xe5 ^ 0x69);
+        key[18]=(byte) (0x90 ^ 0x20);
+        key[19]=(byte) (0x88 ^ 0x20);
+        key[20]=(byte) (0x74 ^ 0xe3);
+        key[21]=(byte) (0x28 ^ 0x20);
+        key[22]=(byte) (0x54 ^ 0x20);
+        key[23]=(byte) (0x20 ^ 0x20);
+        key[24]=(byte) (0x96 ^ 0x20);
+        key[25]=(byte) (0x38 ^ 0x20);
+        key[26]=(byte) (0xf3 ^ 0x20);
+        key[27]=(byte) (0x7c ^ 0x20);
+        key[28]=(byte) (0x23 ^ 0x20);
+        key[29]=(byte) (0xee ^ 0x74);
+        key[30]=(byte) (0x51 ^ 0x2E);
+
+
+
+        
+
 
 
         System.out.println("Key :");
