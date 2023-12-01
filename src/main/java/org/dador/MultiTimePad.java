@@ -63,7 +63,6 @@ public class MultiTimePad {
         key[13] = (byte)(0x20 ^0xbb);
         key[14] = (byte)(0x20 ^0xbf);
         key[15] = (byte)(0x20 ^0x71);
-
         key[16] = (byte)(0x4c ^ 0x61);
         key[17] = (byte)(0xe2 ^0x6e);
         key[18] = (byte)(0x20 ^0x90);
