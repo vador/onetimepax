@@ -60,13 +60,15 @@ public class MultiTimePad {
         System.out.println("XOR messages :");
         System.out.print("i: ");
         System.out.println(displayIndex);
+
         i = 1;
         while (i < nbMsg) {
             // TODO : modifier la ligne suivante
-            tmpByteMsg = HexConverters.toByteArrayFromHex(messages[i]);
+            tmpByteMsg = HexConverters.xorArray(byteArrayMsg[0],byteArrayMsg[i]);
             System.out.print(i);
             System.out.print(": ");
-            System.out.println( HexConverters.toPrintableHexFromByteArray(tmpByteMsg));
+            System.out.println(HexConverters.toPrintableHexFromByteArray(tmpByteMsg));
+
             i++;
         }
 
@@ -74,12 +76,15 @@ public class MultiTimePad {
         System.out.println();
         System.out.println("Decoded messages :");
         i = 0;
+
         while (i < nbMsg) {
+
             // TODO : afficher le message, au lieu des valeur par octet
             tmpByteMsg = HexConverters.xorArray(key, byteArrayMsg[i]);
             System.out.print(i);
             System.out.print(": ");
-            System.out.println(HexConverters.toPrintableHexFromByteArray(tmpByteMsg));
+            System.out.println(HexConverters.toPrintableString(tmpByteMsg));
+            System.out.println();
             i++;
         }
     }
