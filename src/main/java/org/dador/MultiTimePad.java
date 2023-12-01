@@ -6,7 +6,7 @@ package org.dador;
 public class MultiTimePad {
 
     /**
-     * Main function. Loads cryptogram and displays decryption
+     * Main function. Loads cryptogram and displays decryption TAHYA DZAIR
      *
      * @param args No arguments are processed
      */
