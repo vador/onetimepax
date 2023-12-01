@@ -1,7 +1,7 @@
 package org.dador;
 
 /**
- *
+ *Rayan BEN MARZOUK / Mamadou CAMARA / T3 / 2023-2024
  */
 public class MultiTimePad {
 
