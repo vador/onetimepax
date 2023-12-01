@@ -75,6 +75,7 @@ public class MultiTimePad {
         System.out.println("Decoded messages :");
         i = 0;
         while (i < nbMsg) {
+
             // TODO : afficher le message, au lieu des valeur par octet
             tmpByteMsg = HexConverters.xorArray(key, byteArrayMsg[i]);
             System.out.print(i);
