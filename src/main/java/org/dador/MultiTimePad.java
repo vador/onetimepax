@@ -1,6 +1,7 @@
 package org.dador;
 
-/**
+/*2 3 lettre maj avec min/ 0 1 lettre maj ensemble ou min ensemble au premier quartet
+* espace et maj -> 6 ou 7 espace et min -> 4 ou 5*
  *
  */
 public class MultiTimePad {
